@@ -24,6 +24,11 @@ final class CarsTableViewController: UITableViewController {
 		super.viewWillAppear(animated)
 		loadCars()
 	}
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.accessibilityIdentifier = "carsListTable"
+    }
 	
 	private func loadCars() {
         viewModel?.loadCars { [weak self] result in
